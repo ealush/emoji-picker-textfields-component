@@ -1,6 +1,8 @@
-# Text field with emoji picker
+# React Text field components with emoji picker
 
 Input and textarea, already integrated with [Emoji Picker React](https://github.com/ealush/emoji-picker).
+
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
 
 Useage:
 
@@ -15,17 +17,24 @@ function myComponent(props) {
 
 ## Note on onChange:
 When you onChange function fires, it has the following params (in order):
-* event | Event - the event triggered by the change
+* event | Event || null - the event triggered by the change. When triggered manually, is set to null
 * value | String - the actual value of the text field
 * unifiedValue | String - the content, with the emoji names replaced by either unicode emoji chars or html image tags (according to the configuration).
 
-[Live demo](https://ealush.github.io/emoji-picker/)
-
-```
-npm i emoji-picker-react --save
+```js
+onChange(e, value, unifiedValue) { ... }
 ```
 
-![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
+## Getting the unified value manually
+The component exposes the following functions to get the unified value manually:
+`getUnicode`: Returns the field value with unicode emoji characters
+`getImages`: Returns the field value with html image tags representing the emojis
+
+[Live demo](https://ealush.github.io/emoji-picker-textfields-component/)
+
+```
+npm i emoji-picker-textfield --save
+```
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/2.png)
 

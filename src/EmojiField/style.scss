@@ -33,18 +33,6 @@
         bottom: 30px;
     }
 
-    &.emoji-input {
-        .emoji-trigger {
-            bottom: 8px;
-        }
-    }
-
-    &.emoji-textarea {
-        .emoji-trigger {
-            bottom: 2px;
-        }
-    }
-
     .emoji-trigger {
         background: transparent url('./svg/trigger-transparent.svg');
         background-size: 16px 16px;
@@ -52,6 +40,7 @@
         width: 16px;
         position: absolute;
         z-index: 1;
+        bottom: 2px;
         right: 2px;
         opacity: .2;
         transition: opacity .3s;

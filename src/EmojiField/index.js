@@ -45,7 +45,7 @@ class EmojiField extends Component {
         return unicodeValue;
     }
 
-    getImage() {
+    getImages() {
         const allowNative = this.emojiConverter.allow_native;
         this.emojiConverter.allow_native = false;
         const unicodeValue = this.emojiConverter.replace_colons(this.state.value);

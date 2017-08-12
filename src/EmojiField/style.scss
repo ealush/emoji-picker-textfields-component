@@ -1,0 +1,80 @@
+.emoji-text-field {
+    height: 100%;
+    position: relative;
+
+    input, textarea {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    &.picker-hidden {
+        .emoji-picker {
+            display: none;
+            opacity: 0;
+            visibility: none;
+        }
+    }
+
+    &.picker-shown {
+        .emoji-trigger {
+            opacity: 1;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .emoji-picker {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        bottom: 30px;
+    }
+
+    &.emoji-input {
+        .emoji-trigger {
+            bottom: 8px;
+        }
+    }
+
+    &.emoji-textarea {
+        .emoji-trigger {
+            bottom: 2px;
+        }
+    }
+
+    .emoji-trigger {
+        background: transparent url('./svg/trigger-transparent.svg');
+        background-size: 16px 16px;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        z-index: 1;
+        right: 2px;
+        opacity: .2;
+        transition: opacity .3s;
+
+        &:after {
+            background: transparent url('./svg/trigger-opaque.svg');
+            content: '';
+            background-size: 16px 16px;
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        &:hover {
+            opacity: 1;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

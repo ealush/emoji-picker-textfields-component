@@ -5,8 +5,19 @@ Input and textarea, already integrated with [Emoji Picker React](https://github.
 Useage:
 
 ```js
+import React from 'react';
+import { EmojiInput, EmojiTextarea } from 'emoji-picker-textfield';
 
+function myComponent(props) {
+    return <EmojiInput name="my-input" onChange={props.onChange}/>
+}
 ```
+
+## Note on onChange:
+When you onChange function fires, it has the following params (in order):
+* event | Event - the event triggered by the change
+* value | String - the actual value of the text field
+* unifiedValue | String - the content, with the emoji names replaced by either unicode emoji chars or html image tags (according to the configuration).
 
 [Live demo](https://ealush.github.io/emoji-picker/)
 
@@ -15,7 +26,6 @@ npm i emoji-picker-react --save
 ```
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
-
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/2.png)
 

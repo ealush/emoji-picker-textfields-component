@@ -10,6 +10,7 @@ class EmojiField extends Component {
 
         this.state = {
             value: props.value || '',
+            initialMount: false,
             pickerOpen: props.pickerOpen || false
         };
 
@@ -87,7 +88,8 @@ class EmojiField extends Component {
 
     onTriggerClick() {
         this.setState({
-            pickerOpen: !this.state.pickerOpen
+            pickerOpen: !this.state.pickerOpen,
+            initialMount: true
         });
     }
 
@@ -123,7 +125,7 @@ class EmojiField extends Component {
 
         const isOpenClass = this.state.pickerOpen ? 'shown' : 'hidden',
             className = `emoji-text-field picker-${isOpenClass} emoji-${fieldType}`,
-            value = this.state.value;
+            { value, initialMount } = this.state;
 
         const ref = (_field) => this._field = _field;
         return (
@@ -131,7 +133,7 @@ class EmojiField extends Component {
                 {(fieldType === 'input') && (<input {...rest} onChange={this.onChange} type="text" ref={ref} value={value}/>)}
                 {(fieldType === 'textarea') && (<textarea {...rest} onChange={this.onChange} ref={ref} value={value}/>)}
                 <a href="#!" className="emoji-trigger" onClick={this.onTriggerClick}></a>
-                <EmojiPicker onEmojiClick={this.onEmojiClick} ref={(picker) => this._picker = picker}/>
+                { initialMount && <EmojiPicker onEmojiClick={this.onEmojiClick} ref={(picker) => this._picker = picker}/>}
             </div>
         );
     }

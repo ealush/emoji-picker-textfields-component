@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+input, textarea {
+    font-family: 'Roboto', sans-serif;
+}
+
+.unified {
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 300px;
+    position: absolute;
+    top: 0;
+
+    .emoji {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin: 2px 2px -2px 2px;
+    }
+}

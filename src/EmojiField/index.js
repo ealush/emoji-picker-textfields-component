@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import emojiConverter from '../emojiConverter';
+import { debounce } from 'throttle-debounce';
 import PropTypes from 'prop-types';
 import EmojiPicker from 'emoji-picker-react';
 import './style.scss';
@@ -22,6 +23,7 @@ class EmojiField extends Component {
         this.isAnOutsideClick = this.isAnOutsideClick.bind(this);
         this.onPickerkeypress = this.onPickerkeypress.bind(this);
         this.closePicker = this.closePicker.bind(this);
+        this.callOnChange = debounce(200, this.callOnChange.bind(this));
     }
 
     componentDidUpdate() {
@@ -54,14 +56,20 @@ class EmojiField extends Component {
         return unicodeValue;
     }
 
-    onChange(e) {
-        const value = e ? e.target.value : this.state.value,
-            unifiedValue = this.unifyValue(value);
+    callOnChange(e, value) {
+        const unifiedValue = this.unifyValue(value);
 
         if (typeof this.props.onChange === 'function') {
             this.props.onChange(e, value, unifiedValue);
         }
-        this.setState({ value });
+    }
+
+    onChange(e) {
+        const value = e ? e.target.value : this.state.value;
+
+        this.setState({ value }, () => {
+            this.callOnChange(e, value);
+        });
     }
 
     isAnOutsideClick(e) {

@@ -1,5 +1,7 @@
 # React Text field components with emoji picker
 
+[Live demo](https://ealush.github.io/emoji-picker-textfields-component/)
+
 Input and textarea, already integrated with [Emoji Picker React](https://github.com/ealush/emoji-picker).
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
@@ -30,7 +32,6 @@ The component exposes the following functions to get the unified value manually:
 `getUnicode`: Returns the field value with unicode emoji characters
 `getImages`: Returns the field value with html image tags representing the emojis
 
-[Live demo](https://ealush.github.io/emoji-picker-textfields-component/)
 
 ```
 npm i emoji-picker-textfield --save

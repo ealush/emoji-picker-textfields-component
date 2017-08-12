@@ -6,6 +6,8 @@
         width: 100%;
         height: 100%;
         margin: 0;
+        padding-right: 20px;
+        box-sizing: border-box;
     }
 
     &.picker-hidden {
@@ -40,8 +42,8 @@
         width: 16px;
         position: absolute;
         z-index: 1;
-        bottom: 2px;
-        right: 2px;
+        bottom: 4px;
+        right: 5px;
         opacity: .2;
         transition: opacity .3s;
 

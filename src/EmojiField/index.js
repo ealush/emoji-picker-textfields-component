@@ -54,7 +54,6 @@ class EmojiField extends Component {
     }
 
     onChange(e) {
-
         const value = e ? e.target.value : this.state.value,
             unifiedValue = this.unifyValue(value);
 
@@ -126,12 +125,11 @@ class EmojiField extends Component {
             className = `emoji-text-field picker-${isOpenClass} emoji-${fieldType}`,
             value = this.state.value;
 
-
         const ref = (_field) => this._field = _field;
         return (
             <div className={className}>
-                {(fieldType === 'input') && (<input {...rest} type="text" ref={ref} value={value}/>)}
-                {(fieldType === 'textarea') && (<textarea {...rest} ref={ref} value={value}/>)}
+                {(fieldType === 'input') && (<input {...rest} onChange={this.onChange} type="text" ref={ref} value={value}/>)}
+                {(fieldType === 'textarea') && (<textarea {...rest} onChange={this.onChange} ref={ref} value={value}/>)}
                 <a href="#!" className="emoji-trigger" onClick={this.onTriggerClick}></a>
                 <EmojiPicker onEmojiClick={this.onEmojiClick} ref={(picker) => this._picker = picker}/>
             </div>

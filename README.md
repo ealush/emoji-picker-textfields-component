@@ -6,14 +6,24 @@ Input and textarea, already integrated with [Emoji Picker React](https://github.
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
 
+```
+npm i emoji-picker-textfield --save
+```
+
 Useage:
 
 ```js
 import React from 'react';
-import { EmojiInput, EmojiTextarea } from 'emoji-picker-textfield';
+import EmojiField from 'emoji-picker-textfield';
 
-function myComponent(props) {
-    return <EmojiInput name="my-input" onChange={props.onChange}/>
+function inputComponent(props) {
+    // you need to explicitly pass 'fieldType="input"'.
+    return <EmojiField name="my-input" onChange={props.onChange} fieldType="input"/>
+}
+
+function textAreaComponent(props) {
+    // defaults to textarea, no need to pass fieldType
+    return <EmojiField name="my-textarea" onChange={props.onChange}/>
 }
 ```
 
@@ -21,21 +31,32 @@ function myComponent(props) {
 When you onChange function fires, it has the following params (in order):
 * event | Event || null - the event triggered by the change. When triggered manually, is set to null
 * value | String - the actual value of the text field
-* unifiedValue | String - the content, with the emoji names replaced by either unicode emoji chars or html image tags (according to the configuration).
-
 ```js
-onChange(e, value, unifiedValue) { ... }
+onChange(e, value) { ... }
 ```
 
-## Getting the unified value manually
+## Getting the emoji values
 The component exposes the following functions to get the unified value manually:
 `getUnicode`: Returns the field value with unicode emoji characters
 `getImages`: Returns the field value with html image tags representing the emojis
 
+To gain access to these functions, you need to store the component as a ref:
+```js
+<EmojiField ref={(_field) => this._field = _field}/>
+```
 
+Then, to call the function, you simply:
+```js
+const unicodeValue = this._field.getUnicode();
+const imagesValue = this._field.getImages();
 ```
-npm i emoji-picker-textfield --save
+
+## Autoclosing the picker after choosing an emoji:
+
+```js
+<EmojiField autoClose={true}/>
 ```
+
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/2.png)
 

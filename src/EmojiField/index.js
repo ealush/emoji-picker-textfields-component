@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import emojiConverter from '../emojiConverter';
-import { debounce } from 'throttle-debounce';
 import PropTypes from 'prop-types';
 import EmojiPicker from 'emoji-picker-react';
 import './style.scss';
@@ -23,7 +22,6 @@ class EmojiField extends Component {
         this.isAnOutsideClick = this.isAnOutsideClick.bind(this);
         this.onPickerkeypress = this.onPickerkeypress.bind(this);
         this.closePicker = this.closePicker.bind(this);
-        this.callOnChange = debounce(200, this.callOnChange.bind(this));
     }
 
     componentDidUpdate() {
@@ -56,19 +54,13 @@ class EmojiField extends Component {
         return unicodeValue;
     }
 
-    callOnChange(e, value) {
-        const unifiedValue = this.unifyValue(value);
-
-        if (typeof this.props.onChange === 'function') {
-            this.props.onChange(e, value, unifiedValue);
-        }
-    }
-
     onChange(e) {
         const value = e ? e.target.value : this.state.value;
 
         this.setState({ value }, () => {
-            this.callOnChange(e, value);
+            if (typeof this.props.onChange === 'function') {
+                this.props.onChange(e, value);
+            }
         });
     }
 
@@ -122,24 +114,18 @@ class EmojiField extends Component {
     }
 
     render() {
-        const {
-            pickerOpen,
-            autoClose,
-            onChange,
-            config,
-            fieldType,
-            ...rest
-        } = this.props;
+        const { pickerOpen, autoClose, onChange, config, fieldType, ...rest } = this.props;
 
         const isOpenClass = this.state.pickerOpen ? 'shown' : 'hidden',
             className = `emoji-text-field picker-${isOpenClass} emoji-${fieldType}`,
-            { value, initialMount } = this.state;
+            { value, initialMount } = this.state,
+            isInput = fieldType === 'input',
+            ref = (_field) => this._field = _field;
 
-        const ref = (_field) => this._field = _field;
         return (
             <div className={className}>
-                {(fieldType === 'input') && (<input {...rest} onChange={this.onChange} type="text" ref={ref} value={value}/>)}
-                {(fieldType === 'textarea') && (<textarea {...rest} onChange={this.onChange} ref={ref} value={value}/>)}
+                {(isInput) && (<input {...rest} onChange={this.onChange} type="text" ref={ref} value={value}/>)}
+                {(!isInput) && (<textarea {...rest} onChange={this.onChange} ref={ref} value={value}/>)}
                 <a href="#!" className="emoji-trigger" onClick={this.onTriggerClick}></a>
                 { initialMount && <EmojiPicker onEmojiClick={this.onEmojiClick} ref={(picker) => this._picker = picker}/>}
             </div>

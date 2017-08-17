@@ -1,6 +1,6 @@
 {
   "name": "emoji-picker-textfield",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React emoji-picker textfield component",
   "main": "./dist/index.js",
   "scripts": {
@@ -33,7 +33,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
     "emoji-js": "^3.2.2",
-    "emoji-picker-react": "^1.2.9",
+    "emoji-picker-react": "^1.2.12",
     "eslint": "4.4.1",
     "eslint-plugin-react": "^7.2.0",
     "node-sass": "^4.5.3",

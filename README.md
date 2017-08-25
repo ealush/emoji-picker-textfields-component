@@ -2,7 +2,7 @@
 
 [Live demo](https://ealush.github.io/emoji-picker-textfields-component/)
 
-Input and textarea, already integrated with [Emoji Picker React](https://github.com/ealush/emoji-picker).
+Companion package to [Emoji Picker React](https://github.com/ealush/emoji-picker). Comes pre-integrated, and bundled with version 1.4.0 of the picker.
 
 ![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
 

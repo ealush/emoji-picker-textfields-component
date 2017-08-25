@@ -2051,9 +2051,9 @@ emoji-js@^3.2.2:
   dependencies:
     emoji-datasource "3.0.0"
 
-emoji-picker-react@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/emoji-picker-react/-/emoji-picker-react-1.3.1.tgz#30c10eef6b69fbd7f15991aeed474853d075cdfe"
+emoji-picker-react@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/emoji-picker-react/-/emoji-picker-react-1.4.0.tgz#fefd7956bf4176b6e3505baba32121a73505a1b5"
   dependencies:
     babel-runtime "^6.25.0"
     prop-types "^15.5.10"

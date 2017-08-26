@@ -1,5 +1,7 @@
 # React Text field components with emoji picker
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ealush/emoji-picker-textfields-component.svg)](https://greenkeeper.io/)
+
 [Live demo](https://ealush.github.io/emoji-picker-textfields-component/)
 
 Companion package to [Emoji Picker React](https://github.com/ealush/emoji-picker). Comes pre-integrated, and bundled with version 1.4.0 of the picker.

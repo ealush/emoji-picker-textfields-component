@@ -1,5 +1,5 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import EmojiField from '../src';
 import { debounce } from 'throttle-debounce';
 import './style.scss';
@@ -17,16 +17,20 @@ class JustAWrapper extends React.Component {
     }
     render() {
         const html = {__html: this.state.unified};
-        if (this.props.input) {
+        const {
+            input,
+            ...rest
+        } = this.props;
+
+        if (input) {
             return (
                 <div style={{height: '100%', marginTop: '350px', width: '300px'}}>
                     <div className="unified" dangerouslySetInnerHTML={html}/>
                     <div style={{height: '25px'}}>
-                        <EmojiField
-                            {...this.props}
+                        <EmojiField {...rest}
                             onChange={this.onChange}
                             ref={(_field) => this._field = _field}
-                            fieldType='input'/>
+                            fieldType="input"/>
                     </div>
                 </div>
             );
@@ -35,11 +39,10 @@ class JustAWrapper extends React.Component {
             <div style={{height: '100%', marginTop: '300px', width: '300px'}}>
                 <div className="unified" dangerouslySetInnerHTML={html}/>
                 <div style={{height: '100px'}}>
-                    <EmojiField
-                        {...this.props}
+                    <EmojiField {...rest}
                         onChange={this.onChange}
                         ref={(_field) => this._field = _field}
-                        fieldType='textarea'/>
+                        fieldType="textarea"/>
                 </div>
             </div>
         );
@@ -49,8 +52,8 @@ class JustAWrapper extends React.Component {
 // eslint-disable-next-line no-undef
 storiesOf('Emoji TextFields', module)
     .add('Input', () => (
-        <JustAWrapper input={true} autoClose/>
+        <JustAWrapper input={true} autoClose={false}/>
     ))
     .add('Textarea', () => (
-        <JustAWrapper autoclose={true}/>
+        <JustAWrapper autoClose={true}/>
     ));

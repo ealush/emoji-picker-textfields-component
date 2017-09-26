@@ -36,15 +36,15 @@
     "eslint-plugin-react": "^7.2.0",
     "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
-    "react": "15.6.1",
-    "react-dom": "15.6.1",
+    "react": "15.6.2",
+    "react-dom": "15.6.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "svg-url-loader": "^2.1.1",
     "throttle-debounce": "^1.0.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.3",
-    "@storybook/react": "3.2.8",
     "@storybook/addon-actions": "3.2.10"
+    "@storybook/react": "3.2.10",
   }
 }

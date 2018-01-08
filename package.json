@@ -44,7 +44,7 @@
     "throttle-debounce": "^1.0.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.3",
-    "@storybook/addon-actions": "3.2.11",
+    "@storybook/addon-actions": "3.3.5",
     "@storybook/react": "3.2.11"
   }
 }

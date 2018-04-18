@@ -45,6 +45,6 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.3",
     "@storybook/addon-actions": "3.2.11",
-    "@storybook/react": "3.2.11"
+    "@storybook/react": "3.4.2"
   }
 }

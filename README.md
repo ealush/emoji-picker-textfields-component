@@ -6,7 +6,7 @@
 
 Companion package to [Emoji Picker React](https://github.com/ealush/emoji-picker). Comes pre-integrated, and bundled with version 1.4.0 of the picker.
 
-![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/1.png)
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/master/screenshots/recording.gif)
 
 ```
 npm i emoji-picker-textfield --save
@@ -60,12 +60,13 @@ const imagesValue = this._field.getImages();
 ```
 
 
-![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/2.png)
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/master/screenshots/1.png)
 
-![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/3.png)
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/master/screenshots/4.png)
 
-![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/gh-pages/screenshots/4.png)
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/master/screenshots/2.png)
 
+![alt tag](https://raw.githubusercontent.com/ealush/emoji-picker/master/screenshots/3.png)
 
 # Attributions
 You can use this **picker**, free of charge, no attribution is needed. The emojis have their own license.

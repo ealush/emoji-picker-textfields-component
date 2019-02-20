@@ -12,7 +12,7 @@ Companion package to [Emoji Picker React](https://github.com/ealush/emoji-picker
 npm i emoji-picker-textfield --save
 ```
 
-Useage:
+Usage:
 
 ```js
 import React from 'react';

@@ -1,6 +1,6 @@
 {
   "name": "emoji-picker-textfield",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React emoji-picker textfield component",
   "main": "./dist/index.js",
   "scripts": {
